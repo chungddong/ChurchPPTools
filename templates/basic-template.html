@@ -1,0 +1,32 @@
+<div class="content-page" data-item-id="{ITEM_ID}" style="display: none;">
+  <!-- 헤더 카드 -->
+  <div class="content-card">
+    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+      <span style="font-size: 20px;">📄</span>
+      <div style="flex: 1;">
+        <input type="text" id="item-name-{ITEM_ID}" value="{ITEM_NAME}" onchange="updateItemName('{ITEM_ID}', this.value)" 
+               style="border: none; background: transparent; font-size: 14px; font-weight: bold; width: 100%; margin: 0; padding: 2px 4px; border-radius: 3px;"
+               onmouseover="this.style.backgroundColor='#f8f9fa'" 
+               onmouseout="this.style.backgroundColor='transparent'">
+        <span style="color: #6c757d; font-size: 12px;">기본 템플릿</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 파일 업로드 카드 -->
+  <div class="content-card">
+    <h3>파일 업로드</h3>
+    <button class="file-upload-btn" onclick="selectFiles('{ITEM_ID}')">
+      📁 이미지 또는 PPT 파일 선택
+    </button>
+    <input type="file" id="file-input-{ITEM_ID}" accept="image/*,.ppt,.pptx" multiple onchange="handleFileSelection(event, '{ITEM_ID}')" class="file-input">
+    
+    <!-- 미리보기 컨테이너 -->
+    <div class="preview-container" id="preview-{ITEM_ID}">
+      <div class="main-preview" id="main-preview-{ITEM_ID}">
+        <div class="placeholder">파일을 업로드하면 여기에 미리보기가 표시됩니다</div>
+      </div>
+      <div class="slide-thumbnails" id="thumbnails-{ITEM_ID}"></div>
+    </div>
+  </div>
+</div>

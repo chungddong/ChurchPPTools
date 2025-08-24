@@ -3,8 +3,9 @@ const path = require('path')
 
 function createWindow () {
   const mainWindow = new BrowserWindow({
-    width: 1200,
-    height: 800,
+    width: 700,
+    height: 1000,
+    resizable: false,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false
@@ -13,10 +14,8 @@ function createWindow () {
 
   mainWindow.loadFile('index.html')
 
-  // Open DevTools in development
-  if (process.env.NODE_ENV === 'development') {
-    mainWindow.webContents.openDevTools()
-  }
+  // Open DevTools for debugging (disabled for production)
+  // mainWindow.webContents.openDevTools()
 }
 
 app.whenReady().then(createWindow)
