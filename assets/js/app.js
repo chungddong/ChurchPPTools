@@ -337,6 +337,7 @@ function handleFileSelection(event, itemId) {
         thumbnails.appendChild(thumbnail);
       };
       reader.readAsDataURL(file);
+    }
   }
 }
 
@@ -355,6 +356,7 @@ function startSlideshow() {
             data: file.data,
             name: file.name
           });
+        }
       });
     }
   });
